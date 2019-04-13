@@ -1,5 +1,5 @@
-
-# Exercício 1 microserviços
+﻿
+# Exercício 1: Microservices (Order Service)
 
 
 ## Inicializar projeto
@@ -25,29 +25,29 @@ curl -X POST \
   http://localhost:8080/orders \
   -H 'content-type: application/json' \
   -d '{
-    "email": "adrianolaselva@gmail.com",
-    "fullName": "Adriano M. La Selva",
-    "shippingAddress": "Rua fernão dias, 1011",
-    "quantity": 2,
-    "price": 20.00,
-    "paymentMethod": "CREDIT_CARD",
-    "status": "PAYMENT_WAITING",
-    "date": "11/05/2018",
+    "email": "gui.p.zaia@gmail.com",
+    "fullName": "Guilherme Palmeira Zaia",
+    "shippingAddress": "Rua Dona Ana Neri, 581",
+    "quantity": 1,
+    "price": 50.00,
+    "paymentMethod": "CREDIT",
+    "status": "PAYMENT_CONFIRMED",
+    "date": "20/03/2019",
     "payment": {
-        "brand": "MASTERCARD",
+        "brand": "VISA",
         "transactionType": "CREDIT",
-        "cardNumber": "5277 2155 0199 7257",
-        "expDate": "03/20",
-        "cvv": 493,
-        "price": 20.00,
+        "cardNumber": "3901 5361 0584 9477",
+        "expDate": "12/23",
+        "cvv": 536,
+        "price": 50.00,
         "uuidAcquirerTransaction": null
     },
     "items": [{
-    	"description": "Mouse se fio microsoft",
-    	"price": 10.00
+    	"description": "Turbo Charger Motorola",
+    	"price": 35.00
     },{
-    	"description": "fone se fio microsoft",
-    	"price": 10.00
+    	"description": "Earphone Beats",
+    	"price": 15.00
     }]
 }'
 ```
@@ -56,7 +56,7 @@ curl -X POST \
 
 ```sh
 curl -X GET \
-  http://localhost:8080/orders/6fd6a1d7-277a-a149-b7bc-e9e6ecdf02f9 \
+  http://localhost:8080/orders/88ec268b-c178-8fcc-7165-c7ddd0eb25dc \
   -H 'content-type: application/json'
 ```
 
@@ -64,32 +64,32 @@ curl -X GET \
 
 ```sh
 curl -X PUT \
-  http://localhost:8080/orders/6fd6a1d7-277a-a149-b7bc-e9e6ecdf02f9 \
+  http://localhost:8080/orders/88ec268b-c178-8fcc-7165-c7ddd0eb25dc \
   -H 'content-type: application/json' \
   -d '{
-    "email": "adrianolaselva@gmail.com",
-    "fullName": "Adriano M. La Selva",
-    "shippingAddress": "Rua fernão dias, 1011",
-    "quantity": 2,
-    "price": 20.00,
-    "paymentMethod": "CREDIT_CARD",
-    "status": "PAYMENT_CONFIRMED",
-    "date": "11/05/2018",
+    "email": "gui.p.zaia@gmail.com",
+    "fullName": "Guilherme Palmeira Zaia",
+    "shippingAddress": "Rua Dona Ana Neri, 581",
+    "quantity": 1,
+    "price": 50.00,
+    "paymentMethod": "CREDIT",
+    "status": "CANCELED",
+    "date": "20/03/2019",
     "payment": {
-        "brand": "MASTERCARD",
+        "brand": "VISA",
         "transactionType": "CREDIT",
-        "cardNumber": "5277 2155 0199 7257",
-        "expDate": "03/20",
-        "cvv": 493,
-        "price": 20.00,
-        "uuidAcquirerTransaction": 4dfb9044-ceb1-74e0-7861-a5320674b729
+        "cardNumber": "3901 5361 0584 9477",
+        "expDate": "12/23",
+        "cvv": 536,
+        "price": 50.00,
+        "uuidAcquirerTransaction": null
     },
     "items": [{
-    	"description": "Mouse se fio microsoft",
-    	"price": 10.00
+    	"description": "Turbo Charger Motorola",
+    	"price": 35.00
     },{
-    	"description": "fone se fio microsoft",
-    	"price": 10.00
+    	"description": "Earphone Beats",
+    	"price": 15.00
     }]
 }'
 ```
@@ -98,6 +98,6 @@ curl -X PUT \
 
 ```sh
 curl -X DELETE \
-  http://localhost:8080/orders/6fd6a1d7-277a-a149-b7bc-e9e6ecdf02f9
+  http://localhost:8080/orders/88ec268b-c178-8fcc-7165-c7ddd0eb25dc
 ```
 
